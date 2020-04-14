@@ -1,5 +1,7 @@
 <script>
   import DocumentTitle from "../lib/DocumentTitle.svelte";
+
+  let title = "";
 </script>
 
 <style>
@@ -17,75 +19,44 @@
   h1 {
     margin-bottom: 0px;
     text-align: center;
+    font-size: 24pt;
   }
 
   .root {
-    width: 100%;
+    width: 450px;
+    max-width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: center;
-  }
-
-  .card {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-    border-radius: 2px;
-    width: 400px;
-    min-width: 40%;
-    max-width: 40%;
-    background-color: white;
-    height: 400px;
-    padding: 16px;
+    flex-direction: column;
     box-sizing: border-box;
-    margin-right: 40px;
+    margin-top: 40px;
   }
 
-  .card:last-child {
-    margin-right: 0px;
-  }
-  .container-fullscreen {
+  input {
+    width: auto;
+    flex: 1;
+    margin-right: 15px;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9a825;
-  }
-
-  .image {
-    background-image: url("https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/26013/show/praia-do-aventureiro.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .image h1 {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-  }
-
-  @media screen and (max-width: 800px) {
-    .root {
-      flex-direction: column;
-    }
-
-    .card {
-      max-width: 100%;
-      margin-right: 0px;
-      margin-bottom: 16px;
-    }
+    font-family: inherit;
+    font-size: 18pt;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
   }
 </style>
 
-<main>
-  <h1>Svelte Document Title</h1>
-  <h4 />
-  <br />
-  <div class="root">
-    <DocumentTitle />
-  </div>
-</main>
+<DocumentTitle {title}>
+  <main>
+    <h1>Svelte Document Title</h1>
+    <div class="root">
+      <input
+        id="title"
+        type="text"
+        value={title}
+        placeholder="Enter title"
+        on:input={e => (title = e.target.value)} />
+    </div>
+  </main>
+</DocumentTitle>

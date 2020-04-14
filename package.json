@@ -1,9 +1,18 @@
 {
   "name": "svelte-document-title",
   "version": "0.1.0",
-  "main": "index.js",
-  "author": "André Lins",
+  "description": "A document.title for Svelte",
+  "repository": "https://github.com/andrelmlins/svelte-document-title",
+  "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "license": "MIT",
+  "svelte": "src/lib/DocumentTitle.svelte",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "files": [
+    "src/lib/DocumentTitle.svelte",
+    "dist",
+    "README.md"
+  ],
   "private": false,
   "devDependencies": {
     "rollup": "^2.6.1",
@@ -19,5 +28,13 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/andrelmlins/svelte-document-title/issues"
+  },
+  "keywords": [
+    "svelte",
+    "document",
+    "title"
+  ]
 }
