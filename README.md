@@ -33,9 +33,7 @@ An example of how to use the library:
   import DocumentTitle from "svelte-document-title";
 </script>
 
-<DocumentTitle
-  title="XXX"
->
+<DocumentTitle title="XXX">
   <p>Hello World!!!</p>
 </DocumentTitle>
 ```
