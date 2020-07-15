@@ -21,7 +21,7 @@ Local demo:
 ```
 git clone https://github.com/andrelmlins/svelte-document-title.git
 cd svelte-document-title
-yarn install && yarn start
+npm install && npm rum dev
 ```
 
 ## Examples
